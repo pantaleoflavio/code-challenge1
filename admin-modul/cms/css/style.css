@@ -1,0 +1,42 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+#shop-wall {
+    position: relative;
+    width: 100%; 
+}
+
+.single-item-block {
+    position: relative;
+    margin-bottom: 75px; 
+}
+  
+.single-item-poster {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+
+.info-btn-item{
+    z-index: 3;
+}
+
+
+
+footer {
+    margin: 50px 0;
+}

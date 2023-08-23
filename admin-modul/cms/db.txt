@@ -1,0 +1,67 @@
+CREATE DATABASE db-challenge
+
+CREATE TABLE users (
+	user_id INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR (255) NOT NULL,
+	user_email VARCHAR (255) NOT NULL,
+	user_password VARCHAR (255) NOT NULL,
+	user_role VARCHAR (255) NOT NULL DEFAULT 'customer',
+	PRIMARY KEY (`user_id`),
+	UNIQUE (`username`),
+	UNIQUE (`user_email`)
+    );
+    
+CREATE TABLE items (
+    item_id INT NOT NULL AUTO_INCREMENT,
+	item_title VARCHAR (255) NOT NULL,
+	item_image VARCHAR (255),
+	item_description VARCHAR (255),
+	item_id_faq INT NOT NULL,
+	PRIMARY KEY (`item_id`)
+    );
+
+CREATE TABLE faq (
+	faq_id INT NOT NULL AUTO_INCREMENT,
+	faq_id_item INT NOT NULL,
+	faq_content TEXT NOT NULL,
+	faq_answer TEXT NOT NULL,
+	PRIMARY KEY (`faq_id`)
+    )
+
+
+CREATE TABLE team (
+	team_id INT NOT NULL AUTO_INCREMENT,
+	team_name VARCHAR (255) NOT NULL,
+	team_description VARCHAR (255) NULL,
+	team_image VARCHAR (255) NULL,
+	PRIMARY KEY (`team_id`)
+    )
+
+
+INSERT INTO `users`(`username`, `user_email`, `user_password`, `user_role`) 
+VALUES
+('user1','user@1.com','1234','customer'),
+('user2','user@2.com','0000','admin')
+
+INSERT INTO `items`(`item_title`, `item_image`, `item_description`, `item_id_faq`) 
+VALUES (),
+
+
+INSERT INTO `faq`(`faq_id_item`, `faq_content`, `faq_answer`) 
+VALUES
+('1','how is the name of this article?','this articles name is Doc'),
+('1','how much costs this article?','Too much'),
+('2','how is the name of this article?','this articles name is Grumpy'),
+('2','how much costs this article?','Too much'),
+('4','how is the name of this article?','this articles name is Sleepy'),
+('4','Can I throw the article out of window?','No'),
+('4','how much costs this article?','Too less')
+
+INSERT INTO `team`(`team_name`, `team_description`, `team_image`) 
+VALUES
+('Doc','1.jpg','The leader of the seven dwarfs, Doc wears glasses and often mixes up his words.'),
+('Grumpy','2.jpg','Grumpy initially opposes Snow Whites presence in the dwarfs home, but later warns her of the threat posed by the Queen and eagerly rushes to her aid upon realizing that she is in danger, leading the charge himself. He has the biggest nose of the dwarfs and is the slimmest of the seven, and is frequently seen with one eye shut or with a frown.'),
+('Happy','3.jpg','Happy is the jovial dwarf and is usually portrayed laughing. While the other dwarfs have thin black eyebrows inspired by Walt Disneys eyebrows, his eyebrows are white and thicker.'),
+('Sleepy','4.jpg','Sleepy is always tired and appears lethargic in most situations.'),
+('Sneezy','5.jpg','Sneezys name is earned by his extraordinarily powerful sneezes (caused by hay fever), which are seen blowing even the heaviest of objects across a room.'),
+('Dopey','6.jpg','Dopey is the youngest dwarf, being the only one who does not have a beard and is bald, with the largest ears of the dwarfs. He is accident-prone and mute, with Happy explaining that he has simply "never tried" to speak.')
